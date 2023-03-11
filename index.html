@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fpress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,500;0,700;1,500&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Lighty - магазин освещения</title>
   </head>
-  <body></body>
+  <body>
+    <section class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <a href="#" class="header__logo"><span class="header__logo header__logo--color-orange">Fashion</span>press</a>
+          <div class="authorization">
+            <a href="#" class="authorization__item">Join</a>
+            <a href="#" class="authorization__item">Sign In</a>
+            <a href="#" class="authorization__item authorization__item--bag">
+              <span class="authorization__orange">Shopping Bag</span> <span class="authorization__bag-count">(0)</span>
+              <img src="./images/icons/shopping-bag.png" class="authorization__icon-bag" alt="bag-icon" />
+            </a>
+            <button class="burger">
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <nav class="menu header__menu">
+        <div class="container">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#" class="menu__link">Home</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">About us</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Careers</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Contact us</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Company profile</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Company registration</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Wish list</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+  </body>
 </html>
