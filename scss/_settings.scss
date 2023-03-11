@@ -32,40 +32,46 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.overflow-h {
+    overflow: hidden;
+}
+
 .container {
     max-width: 984px;
     padding: 0 15px;
     margin: 0 auto;
 }
 
-::-webkit-scrollbar {
-    /* 1 - скроллбар */
-    width: 10px;
-    height: 0;
-}
+// ::-webkit-scrollbar {
+//     /* 1 - скроллбар */
+//     width: 5px;
+//     margin: 10px;
+//     height: 0;
+// }
 
-::-webkit-scrollbar-button {
-    /* 2 - кнопка */
-}
+// ::-webkit-scrollbar-button {
+//     /* 2 - кнопка */
+// }
 
-::-webkit-scrollbar-track {
-    /* 3 - трек */
-}
+// ::-webkit-scrollbar-track {
+//     /* 3 - трек */
+// }
 
-::-webkit-scrollbar-track-piece {
-    /* 4 - видимая часть трека */
-}
+// ::-webkit-scrollbar-track-piece {
+//     /* 4 - видимая часть трека */
+// }
 
-::-webkit-scrollbar-thumb {
-    /* 5 - ползунок */
-    border-radius: 2px;
-    background-color: rgb(201, 201, 201);
-}
+// ::-webkit-scrollbar-thumb {
+//     /* 5 - ползунок */
+//     border-radius: 2px;
+//     background-color: rgb(201, 201, 201);
+// }
 
-::-webkit-scrollbar-corner {
-    /* 6 - уголок */
-}
+// ::-webkit-scrollbar-corner {
+//     /* 6 - уголок */
+// }
 
-::-webkit-resizer {
-    /* 7 - изменение размеров */
-}
+// ::-webkit-resizer {
+//     /* 7 - изменение размеров */
+// }
