@@ -16,12 +16,10 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="./scripts/swiper-bundle.min.js"></script>
     <script src="./scripts/responsive-menu-local.js"></script>
     <script src="./scripts/range-scale.js"></script>
     <script src="./scripts/view-changer.js"></script>
@@ -29,7 +27,6 @@
     <script src="./scripts/image-coord-slide.js"></script>
     <script src="./scripts/to-top.js"></script>
     <script src="./scripts/sidebar-category-popup.js"></script>
-    <script type="module" src="./scripts/swiper.js"></script>
     <title>Lighty - магазин освещения</title>
   </head>
   <body>
@@ -137,7 +134,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Pictures</a></li>
             <li><a href="#">Summer 15</a></li>
-            <li>Current product</li>
+            <li>Italy</li>
           </ul>
           <div class="main__wrapper">
             <div class="main-overlay">
@@ -395,51 +392,410 @@
                 <img src="./images/delivery.jpg" />
               </div>
             </div>
-
-            <div class="product">
-              <div class="product__wrapper">
-                <div class="product__main">
-                  <h2 class="product__title">Product title</h2>
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img src="./images/product-image.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                      <div class="swiper-slide">
-                        <img src="./images/4.jpg" alt="" />
-                      </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button swiper-button-prev"><div></div></div>
-                    <div class="swiper-button swiper-button-next"><div></div></div>
+            <div class="main-products main__products">
+              <div class="main-products__find-results">Результаты поиска по запросу <span>"Man's jeans"</span></div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
                   </div>
                 </div>
-                <div class="product__info">
-                  <div class="product__availability">В наличии</div>
-                  <div class="product__code">Код: 376</div>
-                  <div class="product__manufacturer">Производитель: <span>Casio</span></div>
-                  <div class="product__price"><span class="value">3 400</span> <span class="currency">грн.</span></div>
-                  <div class="product__delivery">Безкоштовна доставка</div>
-                  <button class="product__buy-btn">Купить</button>
-                  <button class="product__share-btn"></button>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
+                </div>
+              </div>
+              <div class="product-item main-products__item">
+                <div class="product-item__image">
+                  <img src="./images/product-image.jpg" alt="product" />
+                  <img src="./images/2.jpg" alt="product" />
+                  <img src="./images/3.jpg" alt="product" />
+                  <img src="./images/4.jpg" alt="product" />
+                </div>
+                <div class="product-item__about">
+                  <div class="product-item__title">Kids Moon Color block Footed Tights</div>
+                  <div class="product-other product-item__other">
+                    <img src="./images/icons/ellipsis-horizontal.svg" class="product-other__image" />
+                    <ul class="product-other__list">
+                      <li class="product-other__item">Add to bag</li>
+                      <li class="product-other__item">Open in new tab</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-item__info">
+                  <div class="prodcuts-item__price">
+                    <span class="products-item__uah-text">₴</span><span class="products-item__whole-number-text">8.</span
+                    ><span class="products-item__sup-number-text">99</span>
+                  </div>
+                  <button class="products-item__buy-btn" type="submit">GET IT</button>
                 </div>
               </div>
             </div>
