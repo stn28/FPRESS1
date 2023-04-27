@@ -1,0 +1,23 @@
+.responsive-local-menu {
+  display: block;
+  background-color: rgba(255, 42, 27, 0.6);
+  position: fixed;
+  left: 0;
+  top: 150px;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  width: 30px;
+  height: 50px;
+  z-index: 5;
+  background-image: url(../images/icons/three-horizontal-lines-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 3px center;
+  background-size: 70%;
+  transition: opacity 0.1s;
+  box-shadow: 0 0 30px 0 #b12600e9;
+  cursor: pointer;
+  &--active {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

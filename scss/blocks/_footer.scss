@@ -1,0 +1,113 @@
+.footer {
+    font-family: "Roboto", sans-serif;
+    padding: 34px 0 70px 0;
+    background-color: #d6d4db;
+    &__wrapper {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.about {
+    flex: 0 1 284px;
+    position: relative;
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #323232;
+        text-transform: uppercase;
+        cursor: default;
+        margin-bottom: 26px;
+    }
+    &__logo {
+        display: inline-block;
+        margin-bottom: 26px;
+    }
+    &__text {
+        font-size: 12px;
+        max-width: 220px;
+    }
+    &::after {
+        content: "";
+        display: block;
+        background-color: #e9eaed;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        height: 142px;
+        width: 1px;
+        border-left: 1px solid #e1e0df;
+    }
+}
+
+.follow {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+    }
+    &__text {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    &::after {
+        content: "";
+        display: block;
+        background-color: #e9eaed;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        height: 142px;
+        width: 1px;
+        border-left: 1px solid #e1e0df;
+    }
+}
+.contacts {
+    flex: 0 1 440px;
+}
+
+.dib {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #e70505;
+    margin-right: 10px;
+    img {
+        transform: translate(3px, 3px);
+    }
+}
+
+.contacts {
+    padding-left: 50px;
+    &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__info {
+        flex: 0 1 210px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    &__last-info {
+        color: #747474;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}

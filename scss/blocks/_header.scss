@@ -1,87 +1,173 @@
 .header {
-    background-color: #f7f7f7;
-    &__wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 16px;
-        padding-right: 5px;
-    }
-    &__logo {
-        font-family: "Open Sans", sans-serif;
-        font-size: 30px;
-        text-transform: uppercase;
-        font-weight: 300;
-        color: #000;
-        &--color-orange {
-            color: $orange;
-        }
-    }
+  background-color: #f7f7f7;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 5px;
+  }
+}
+
+.logo {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #000;
+  &__text--color-orange {
+    color: $orange;
+  }
 }
 
 .authorization {
-    display: flex;
-    align-items: center;
-    &__item {
-        padding: 26px 20px;
-        background-color: #eeeeee;
-        border: 1px solid #e4e2e2;
-        margin-right: 1px;
-        font-size: 14px;
-        transition: background-color 0.5s ease;
-        &--bag {
-            position: relative;
-            padding: 26px 60px 26px 26px;
-            color: $orange;
-        }
-        &:hover {
-            background-color: #e1e1e1;
-        }
+  display: flex;
+  align-items: center;
+  &__item {
+    padding: 26px 20px;
+    background-color: #eeeeee;
+    border: 1px solid #e4e2e2;
+    margin-right: 1px;
+    font-size: 14px;
+    transition: background-color 0.5s ease;
+    &--bag {
+      position: relative;
+      padding: 26px 60px 26px 26px;
+      color: $orange;
     }
-    &__bag-count {
-        font-size: 12px;
-        color: #231f20;
+    &:hover {
+      background-color: #e1e1e1;
     }
-    &__icon-bag {
-        position: absolute;
-        top: 50%;
-        right: 20%;
-        transform: translate(50%, -50%);
+    &:active {
+      background-color: rgba($color: #3b3434, $alpha: 0.3);
     }
-    .burger {
-        display: none;
-        padding: 0 0 0 10px;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: transparent;
-        border: none;
-        width: 30px;
-        height: 15px;
-        cursor: pointer;
-        &__line {
-            width: 100%;
-            height: 2px;
-            background-color: #000;
-        }
-        &__line--white {
-            background-color: #fff;
-        }
+  }
+  &__bag-count {
+    font-size: 12px;
+    color: #231f20;
+  }
+  &__icon-bag {
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: translate(50%, -50%);
+  }
+  .burger {
+    display: none;
+    padding: 0 0 0 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 15px;
+    cursor: pointer;
+    &__line {
+      width: 100%;
+      height: 2px;
+      background-color: #000;
     }
+    &__line--white {
+      background-color: #fff;
+    }
+  }
 }
 
 .menu {
-    background-color: #000;
-    padding: 18px 0;
-    &__list {
-        max-width: 768px;
-        padding-left: 20px;
-        display: flex;
-        justify-content: space-between;
+  background-color: #000;
+  padding: 18px 0;
+  &__list {
+    max-width: 768px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    color: #fffffff5;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: "Myriad", sans-serif;
+    transition: 300ms;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-color: #fffffff5;
     }
-    &__link {
-        color: #ffffff;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-family: "Myriad", sans-serif;
+  }
+}
+
+.up-search {
+  background-color: #f1edea;
+  padding: 7px 0 10px 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__form {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  &__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    color: #df1f26;
+    margin-right: 20px;
+  }
+
+  &__input {
+    width: 275px;
+    height: 100%;
+    border: none;
+    background-color: #c9c9c9;
+    transition: outline 0.05s;
+    outline: 0 solid #df1f26;
+    &:focus {
+      outline: 2px solid #df1f26;
     }
+  }
+  &__btn {
+    cursor: pointer;
+    background: url("../images/icons/search.svg") center / 19px 19px no-repeat;
+    border: none;
+    background-color: #df1f26;
+    height: 100%;
+    width: 32px;
+    flex-shrink: 0;
+  }
+
+  &__view {
+  }
+}
+.header {
+  &__search {
+  }
+}
+.container {
+}
+.view {
+  display: flex;
+  gap: 17px;
+  &__list {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    width: 23px;
+    height: 20px;
+  }
+
+  &__table {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    width: 26px;
+    height: 20px;
+  }
 }

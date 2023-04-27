@@ -3,65 +3,507 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="height=device-height, 
+    width=device-width, initial-scale=1.0, 
+    minimum-scale=1.0, maximum-scale=1.0, 
+    user-scalable=yes" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,500;0,700;1,500&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="./scripts/swiper-bundle.min.js"></script>
+    <script src="./scripts/responsive-menu-local.js"></script>
+    <script src="./scripts/range-scale.js"></script>
+    <script src="./scripts/view-changer.js"></script>
+    <script src="./scripts/submenu-event.js"></script>
+    <script src="./scripts/image-coord-slide.js"></script>
+    <script src="./scripts/to-top.js"></script>
+    <script src="./scripts/sidebar-category-popup.js"></script>
+    <script type="module" src="./scripts/swiper.js"></script>
     <title>Lighty - магазин освещения</title>
   </head>
   <body>
-    <section class="header">
-      <div class="container">
-        <div class="header__wrapper">
-          <a href="#" class="header__logo"><span class="header__logo header__logo--color-orange">Fashion</span>press</a>
-          <div class="authorization">
-            <a href="#" class="authorization__item">Join</a>
-            <a href="#" class="authorization__item">Sign In</a>
-            <a href="#" class="authorization__item authorization__item--bag">
-              <span class="authorization__orange">Shopping Bag</span> <span class="authorization__bag-count">(0)</span>
-              <img src="./images/icons/shopping-bag.png" class="authorization__icon-bag" alt="bag-icon" />
-            </a>
-            <button class="burger">
-              <span class="burger__line"></span>
-              <span class="burger__line"></span>
-              <span class="burger__line"></span>
-            </button>
+    <style>
+      .ui-slider-range.ui-state-active {
+        background-color: #df1f26;
+        border: 1px solid red;
+      }
+
+      .ui-slider-handle.ui-state-active {
+        background-color: #df1f26;
+        border: 1px solid red;
+      }
+      .ui-slider-handle:focus {
+        outline: none;
+      }
+    </style>
+    <script>
+      function enforceMinMax(el) {
+        if (el.value) {
+          if (parseInt(el.value) < parseInt(el.min)) {
+            el.style.outline = "3px solid #FF0000";
+          } else if (parseInt(el.value) > parseInt(el.max)) {
+            el.style.outline = "3px solid #FF0000";
+          } else {
+            el.style.outline = "";
+          }
+        } else {
+          el.style.outline = "";
+        }
+      }
+    </script>
+    <div class="wrapper">
+      <section class="header">
+        <div class="container">
+          <div class="header__wrapper">
+            <a href="#" class="logo header__logo"><span class="logo__text logo__text--color-orange">Fashion</span>press</a>
+            <div class="authorization">
+              <a href="#" class="authorization__item">Join</a>
+              <a href="#" class="authorization__item">Sign In</a>
+              <a href="#" class="authorization__item authorization__item--bag">
+                <span class="authorization__orange">Shopping Bag</span>
+                <span class="authorization__bag-count">(0)</span>
+                <img src="./images/icons/shopping-bag.svg" class="authorization__icon-bag" alt="bag-icon" />
+              </a>
+              <button class="burger">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <nav class="menu header__menu">
+        <nav class="menu header__menu">
+          <div class="container">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">About us</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Careers</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Contact us</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Company profile</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Company registration</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Wish list</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="up-search header__search">
+          <div class="container">
+            <div class="up-search__wrapper">
+              <form class="up-search__form" action="#">
+                <div class="up-search__title">Search Product</div>
+                <input class="up-search__input" type="text" />
+                <button class="up-search__btn"></button>
+              </form>
+              <div class="view up-search__view">
+                <button class="view__list">
+                  <img src="./images/icons/list.svg" />
+                </button>
+                <button class="view__table">
+                  <img src="./images/icons/table-darken.svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <div class="responsive-local-menu"></div>
+      <main class="main">
         <div class="container">
-          <ul class="menu__list">
-            <li class="menu__item">
-              <a href="#" class="menu__link">Home</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">About us</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Careers</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Contact us</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Company profile</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Company registration</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Wish list</a>
-            </li>
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pictures</a></li>
+            <li><a href="#">Summer 15</a></li>
+            <li>Current product</li>
           </ul>
+          <div class="main__wrapper">
+            <div class="main-overlay">
+              <div class="main-overlay__backdrop"></div>
+            </div>
+            <div class="main-sidebar main__sidebar">
+              <ul class="sidebar-menu main-sidebar__menu">
+                <div class="sidebar-menu__title">Products Menu</div>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Man</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Woman</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link sidebar-menu__link--active">Fashion</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Kids</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Jeans</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Tshirt</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Top Fashion</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Summer collection</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a href="#" class="sidebar-menu__link">Special offer</a>
+                  <ul class="subcategory-menu sidebar-menu__subcategory-menu">
+                    <li class="subcategory-menu__title">Category name</li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <li class="subcategory-menu__item">
+                      <a href="#" class="subcategory-menu__link">Subcategory</a>
+                    </li>
+                    <div class="subcategory-menu__close"></div>
+                  </ul>
+                </li>
+              </ul>
+              <div class="sidebar-scale main-sidebar__scale">
+                <div class="sidebar-scale__title">Цена</div>
+                <div id="slider-range"></div>
+                <div class="sidebar-scale__inputs">
+                  <input class="sidebar-scale__input" min="500" max="9999999" type="number" onkeyup="enforceMinMax(this)" />
+                  <span class="sidebar-scale__dash">-</span>
+                  <input
+                    class="sidebar-scale__input sidebar-scale__input--last"
+                    min="500"
+                    type="number"
+                    max="9999999"
+                    onkeyup="enforceMinMax(this)" />
+                  <button class="sidebar-scale__button someClasses" type="submit">OK</button>
+                </div>
+              </div>
+
+              <div class="main-sidebar__delivery">
+                <img src="./images/delivery.jpg" />
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="product__wrapper">
+                <div class="product__main">
+                  <h2 class="product__title">Product title</h2>
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="./images/product-image.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/4.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button swiper-button-prev"><div></div></div>
+                    <div class="swiper-button swiper-button-next"><div></div></div>
+                  </div>
+                </div>
+                <div class="product__info">
+                  <div class="product__availability">В наличии</div>
+                  <div class="product__code">Код: 376</div>
+                  <div class="product__manufacturer">Производитель: <span>Casio</span></div>
+                  <div class="product__price"><span class="value">3 400</span> <span class="currency">грн.</span></div>
+                  <div class="product__delivery">Безкоштовна доставка</div>
+                  <button class="product__buy-btn">Купить</button>
+                  <button class="product__share-btn"></button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-    </section>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__wrapper">
+            <div class="about footer__about">
+              <div class="about__title">About</div>
+              <a href="#" class="logo about__logo"><span class="logo__text logo__text--color-orange">Fashion</span>press</a>
+              <div class="about__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin sem nec leo tempus fermentum. Integer
+                consequat, turpis eget lobortis.
+              </div>
+            </div>
+            <div class="follow footer__follow">
+              <div class="follow__title">FOLLOW US</div>
+              <div class="follow__wrapper">
+                <a class="follow__facebook" href="#">
+                  <div class="follow__facebook-icon dib">
+                    <img src="./images/icons/facebook-footer.png" alt="facebook-icon" />
+                  </div>
+                  <span class="follow__text">facebook</span>
+                </a>
+                <a class="follow__twitter" href="#">
+                  <div class="follow__twitter-icon dib">
+                    <img src="./images/icons/twitter-footer.png" alt="twitter-icon" />
+                  </div>
+                  <span class="follow__text">twitter</span>
+                </a>
+                <a class="follow__google" href="#">
+                  <div class="follow__google-icon dib">
+                    <img src="./images/icons/google-footer.png" alt="google-icon" />
+                  </div>
+                  <span class="follow__text">google</span>
+                </a>
+                <a class="follow__inst" href="#">
+                  <div class="follow__inst-icon dib">
+                    <img src="./images/icons/inst-footer.png" alt="inst-icon" />
+                  </div>
+                  <span class="follow__text">instagram</span>
+                </a>
+              </div>
+            </div>
+            <div class="contacts footer__contacts">
+              <div class="contacts__title">Contact Info</div>
+              <div class="contacts__wrapper">
+                <div class="contacts__info">
+                  <div class="contacts__phone">Phone: 1.800.555.6789</div>
+                  <div class="contacts__fax">Fax: 1.888.555.9876</div>
+                  <div class="contacts__mail">Email: letschat@11thagency.com</div>
+                </div>
+                <div class="contacts__last-info">
+                  <div class="contacts__name">John Doe, Comapny Inc.</div>
+                  <div class="contacts__adress">12345 North Main Street</div>
+                  <div class="contacts__country">Anywhere, USA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
